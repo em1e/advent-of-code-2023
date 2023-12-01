@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkettune <vkettune@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 10:53:34 by vkettune          #+#    #+#             */
-/*   Updated: 2023/12/01 14:40:59 by vkettune         ###   ########.fr       */
+/*   Created: 2023/12/01 12:53:34 by vkettune          #+#    #+#             */
+/*   Updated: 2023/12/01 15:03:36 by vkettune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	*find_value(int argc, char *argv[])
 	return (res);
 }
 
-
+/*
 int main(int argc, char *argv[])
 {
     int *sum = find_value(argc, argv);
@@ -85,5 +85,4 @@ int main(int argc, char *argv[])
         printf("Failed to allocate memory.\n");
     }
     return 0;
-}
-
+}*/
