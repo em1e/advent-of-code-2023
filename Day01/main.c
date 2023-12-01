@@ -71,7 +71,7 @@ int	*find_value(int argc, char *argv[])
 	return (res);
 }
 
-/*
+
 int main(int argc, char *argv[])
 {
     int *sum = find_value(argc, argv);
@@ -86,4 +86,4 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
-*/
+
