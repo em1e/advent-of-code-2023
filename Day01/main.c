@@ -6,7 +6,7 @@
 /*   By: vkettune <vkettune@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:53:34 by vkettune          #+#    #+#             */
-/*   Updated: 2023/12/01 17:51:19 by vkettune         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:52:39 by vkettune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	*find_value(int argc, char *argv[])
 		i++;
 	}
 	if (!(res = (int *)malloc(sizeof(int))))
-      return (NULL);
+		return (NULL);
 	*res = sum;
 	return (res);
 }
