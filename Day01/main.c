@@ -6,7 +6,7 @@
 /*   By: vkettune <vkettune@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:53:34 by vkettune          #+#    #+#             */
-/*   Updated: 2023/12/01 17:52:39 by vkettune         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:59:20 by vkettune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 int	combine(int first, int last)
 {
-	int	num;
-
-	num = (first * 10) + last;
+	int	num = (first * 10) + last;
 	return (num);
 }
 
@@ -30,11 +28,10 @@ int	end(int i, int j, char **argv)
 
 int	*find_value(int argc, char *argv[])
 {
-	int	i = 0;
-	int	j = 0;
+	int	j, sum = 0;
 	int	first = -1;
 	int	last = -1;
-	int	sum = 0;
+	int	i = 0;
 	int	*res;
 
 	while (argv[i] != NULL && i < argc) // while there are lines to decode
@@ -73,15 +70,8 @@ int	*find_value(int argc, char *argv[])
 /*
 int	main(int argc, char *argv[])
 {
-	int	*sum;
-
-	sum = find_value(argc, argv);
-	if (sum != NULL)
-	{
-		printf("The sum of all calibration values is %d\n", *sum);
-		free(sum);
-	}
-	else
-		printf("Failed to allocate memory.\n");
+	int	*sum = find_value(argc, argv);
+	printf("The sum of all calibration values is %d\n", *sum);
+	free(sum);
 	return (0);
 }*/
