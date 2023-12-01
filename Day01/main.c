@@ -6,7 +6,7 @@
 /*   By: vkettune <vkettune@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:53:34 by vkettune          #+#    #+#             */
-/*   Updated: 2023/12/01 17:04:05 by vkettune         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:51:19 by vkettune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,4 @@ int	main(int argc, char *argv[])
 	else
 		printf("Failed to allocate memory.\n");
 	return (0);
-}8/
+}*/
