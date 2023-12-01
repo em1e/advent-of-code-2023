@@ -6,7 +6,7 @@
 /*   By: vkettune <vkettune@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:53:34 by vkettune          #+#    #+#             */
-/*   Updated: 2023/12/01 17:59:20 by vkettune         ###   ########.fr       */
+/*   Updated: 2023/12/01 20:24:03 by vkettune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	combine(int first, int last)
 	return (num);
 }
 
-int	end(int i, int j, char **argv)
+int	end(int j, char *line)
 {
-	while (argv[i][j] != '\0')
+	while (line[j] != '\n')
 		j++;
 	return (j);
 }
@@ -36,29 +36,46 @@ int	*find_value(int argc, char *argv[])
 
 	while (argv[i] != NULL && i < argc) // while there are lines to decode
 	{
-		j = 0;
-		while (first < 0 && argv[i][j] != '\0') // find first num
+		FILE *file = fopen("input.txt", "r");
+		char line[1000];
+
+		if (file == NULL)
 		{
-			if (argv[i][j] >= '0' && argv[i][j] <= '9')
-				first = argv[i][j] - '0';
-			else
-				j++;
+			printf("Failed to open file");
+			i++;
+			continue;
 		}
-		j = end(i, j, argv) - 1;
-		while (last < 0 && j >= 0) // find last num
+		while (fgets(line, sizeof(line), file) != NULL)
 		{
-			if (argv[i][j] >= '0' && argv[i][j] <= '9')
+			printf("%s", line);
+			j = 0;
+			while (first < 0 && line[j] != '\0') // find first num
 			{
-				last = argv[i][j] - '0';
-				break ;
+				if (line[j] >= '0' && line[j] <= '9')
+					first = line[j] - '0';
+				else
+					j++;
 			}
-			else
-				j--;
+			printf("first: %d\n", first);
+			j = end(j, line) - 1;
+			while (last < 0 && j >= 0) // find last num
+			{
+				if (line[j] >= '0' && line[j] <= '9')
+				{
+					last = line[j] - '0';
+					break ;
+				}
+				else
+					j--;
+			}
+			printf("Last: %d\n", last);
+			if (first >= 0 && last >= 0)
+				sum += combine(first, last); // add num from line to the final sum
+			first = -1;
+			last = -1;
+			printf("Sum: %d\n", sum);
 		}
-		if (first >= 0 && last >= 0)
-			sum += combine(first, last); // add num from line to the final sum
-		first = -1;
-		last = -1;
+		fclose(file); // close the file
 		i++;
 	}
 	if (!(res = (int *)malloc(sizeof(int))))
@@ -67,11 +84,10 @@ int	*find_value(int argc, char *argv[])
 	return (res);
 }
 
-/*
 int	main(int argc, char *argv[])
 {
 	int	*sum = find_value(argc, argv);
 	printf("The sum of all calibration values is %d\n", *sum);
 	free(sum);
 	return (0);
-}*/
+}
