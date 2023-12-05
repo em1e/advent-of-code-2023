@@ -1,5 +1,5 @@
-## This is the 1st of Dec problem for the 2023 advent of code calendar.
-#### The instructions for Part 1:
+# This is the 1st of Dec problem for the 2023 advent of code calendar.
+## The instructions for Part 1:
 
 The newly-improved calibration document consists of lines of text; each line originally contained a specific **calibration value** that the Elves now need to recover. On each line, the calibration value can be found by combining the **first digit** and the **last digit** (in that order) to form a single two-digit number.
 
@@ -15,7 +15,7 @@ In this example, the calibration values of these four lines are 12, 38, 15, and 
 
 Consider your entire calibration document. **What is the sum of all of the calibration values?**
 
-#### The instructions for Part 2:
+## The instructions for Part 2:
 
 Your calculation isn't quite right. It looks like some of the digits are actually spelled out with letters: one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
 
